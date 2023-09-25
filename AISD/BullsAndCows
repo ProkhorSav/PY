@@ -1,0 +1,32 @@
+from random import randint 
+buls = 0
+cuw = 0
+n = randint(1000, 9999)
+print(n)
+ans = int(input("введите число"))
+if ans < 1000 or ans > 9999:
+    print("неверный ввод")
+while ans != n:
+    if ans == n:
+        break
+    if n % 10 == ans % 10:
+        buls += 1
+    elif str(ans % 10) in str(n):
+        cuw += 1   
+    if (n//10)%10 == (ans//10)%10:
+        buls += 1
+    elif str((ans//10)%10) in str(n):
+        cuw += 1   
+    if (n//100)%10 == (ans//100)%10 :
+        buls += 1
+    elif str((ans//100)%10) in str(n):
+        cuw += 1   
+    if (n//1000)%10 == (ans//1000)%10:
+        buls += 1
+    elif str((ans//1000)%10) in str(n):
+        cuw += 1 
+    print(F'Быков:  {buls}   Коров:  {cuw}')
+    ans = int(input("введите число"))
+    buls = 0
+    cuw = 0
+print("вы выйграли")
